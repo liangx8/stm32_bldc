@@ -1,0 +1,68 @@
+TIM2   = 0x4000 0000
+TIM14  = 0x4000 2000
+GPIOA  = 0x4800 0000
+GPIOB  = 0x4800 0400
+GPIOC  = 0x4800 0800
+GPIOD  = 0x4800 0c00
+GPIOF  = 0x4800 1400
+USART1 = 0x4001 3800
+
+typedef struct
+{
+  __IO uint32_t CR1;          /*!< TIM control register 1,              Address offset: 0x00 */
+  __IO uint32_t CR2;          /*!< TIM control register 2,              Address offset: 0x04 */
+  __IO uint32_t SMCR;         /*!< TIM slave Mode Control register,     Address offset: 0x08 */
+  __IO uint32_t DIER;         /*!< TIM DMA/interrupt enable register,   Address offset: 0x0C */
+  __IO uint32_t SR;           /*!< TIM status register,                 Address offset: 0x10 */
+  __IO uint32_t EGR;          /*!< TIM event generation register,       Address offset: 0x14 */
+  __IO uint32_t CCMR1;        /*!< TIM capture/compare mode register 1, Address offset: 0x18 */
+  __IO uint32_t CCMR2;        /*!< TIM capture/compare mode register 2, Address offset: 0x1C */
+  __IO uint32_t CCER;         /*!< TIM capture/compare enable register, Address offset: 0x20 */
+  __IO uint32_t CNT;          /*!< TIM counter register,                Address offset: 0x24 */
+  __IO uint32_t PSC;          /*!< TIM prescaler register,              Address offset: 0x28 */
+  __IO uint32_t ARR;          /*!< TIM auto-reload register,            Address offset: 0x2C */
+  __IO uint32_t RCR;             /*!< TIM  repetition counter register,            Address offset: 0x30 */
+  __IO uint32_t CCR1;         /*!< TIM capture/compare register 1,      Address offset: 0x34 */
+  __IO uint32_t CCR2;         /*!< TIM capture/compare register 2,      Address offset: 0x38 */
+  __IO uint32_t CCR3;         /*!< TIM capture/compare register 3,      Address offset: 0x3C */
+  __IO uint32_t CCR4;         /*!< TIM capture/compare register 4,      Address offset: 0x40 */
+  __IO uint32_t BDTR;            /*!< TIM break and dead-time register,            Address offset: 0x44 */
+  __IO uint32_t DCR;          /*!< TIM DMA control register,            Address offset: 0x48 */
+  __IO uint32_t DMAR;            /*!< TIM DMA address for full transfer register,  Address offset: 0x4C */
+  __IO uint32_t OR;           /*!< TIM option register,                 Address offset: 0x50 */
+} TIM_TypeDef;
+
+typedef struct
+{
+  __IO uint32_t MODER;        /*!< GPIO port mode register,                     Address offset: 0x00      */
+  __IO uint32_t OTYPER;       /*!< GPIO port output type register,              Address offset: 0x04      */
+  __IO uint32_t OSPEEDR;      /*!< GPIO port output speed register,             Address offset: 0x08      */
+  __IO uint32_t PUPDR;        /*!< GPIO port pull-up/pull-down register,        Address offset: 0x0C      */
+  __IO uint32_t IDR;          /*!< GPIO port input data register,               Address offset: 0x10      */
+  __IO uint32_t ODR;          /*!< GPIO port output data register,              Address offset: 0x14      */
+  __IO uint32_t BSRR;         /*!< GPIO port bit set/reset register,      Address offset: 0x18 */
+  __IO uint32_t LCKR;         /*!< GPIO port configuration lock register,       Address offset: 0x1C      */
+  __IO uint32_t AFR[2];       /*!< GPIO alternate function low register,  Address offset: 0x20-0x24 */
+  __IO uint32_t BRR;          /*!< GPIO bit reset register,                     Address offset: 0x28      */
+} GPIO_TypeDef;
+
+/**
+  * @brief Universal Synchronous Asynchronous Receiver Transmitter
+  */
+
+typedef struct
+{
+  __IO uint32_t CR1;    /*!< USART Control register 1,                 Address offset: 0x00 */
+  __IO uint32_t CR2;    /*!< USART Control register 2,                 Address offset: 0x04 */
+  __IO uint32_t CR3;    /*!< USART Control register 3,                 Address offset: 0x08 */
+  __IO uint32_t BRR;    /*!< USART Baud rate register,                 Address offset: 0x0C */
+  __IO uint32_t GTPR;   /*!< USART Guard time and prescaler register,  Address offset: 0x10 */
+  __IO uint32_t RTOR;   /*!< USART Receiver Time Out register,         Address offset: 0x14 */
+  __IO uint32_t RQR;    /*!< USART Request register,                   Address offset: 0x18 */
+  __IO uint32_t ISR;    /*!< USART Interrupt and status register,      Address offset: 0x1C */
+  __IO uint32_t ICR;    /*!< USART Interrupt flag Clear register,      Address offset: 0x20 */
+  __IO uint16_t RDR;    /*!< USART Receive Data register,              Address offset: 0x24 */
+  uint16_t  RESERVED1;  /*!< Reserved, 0x26                                                 */
+  __IO uint16_t TDR;    /*!< USART Transmit Data register,             Address offset: 0x28 */
+  uint16_t  RESERVED2;  /*!< Reserved, 0x2A                                                 */
+} USART_TypeDef;
